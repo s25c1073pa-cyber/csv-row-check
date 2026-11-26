@@ -1,0 +1,14 @@
+# SPDX-FileCopyrightText: 2026 Haruto Nakanou
+# SPDX-License-Identifier: BSD-3-Clause
+name: test
+on: push
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+      - name: Run tests
+        run: bash test.bash
